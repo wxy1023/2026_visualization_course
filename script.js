@@ -230,6 +230,119 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(printStyle);
 });
 
+    // Tab functionality for visualizations
+    function openTab(evt, tabName) {
+        const tabPanes = document.querySelectorAll('.tab-pane');
+        const tabBtns = document.querySelectorAll('.tab-btn');
+
+        // Hide all tab panes
+        tabPanes.forEach(pane => {
+            pane.classList.remove('active');
+        });
+
+        // Remove active class from all tab buttons
+        tabBtns.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Show the selected tab pane and mark button as active
+        document.getElementById(tabName).classList.add('active');
+        if (evt) {
+            evt.currentTarget.classList.add('active');
+        }
+    }
+
+    // Add tab styles
+    const tabStyle = document.createElement('style');
+    tabStyle.textContent = `
+        .viz-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #64748b;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .tab-btn:hover {
+            color: #3182ce;
+            background-color: #f8fafc;
+        }
+
+        .tab-btn.active {
+            color: #3182ce;
+            font-weight: 600;
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #3182ce;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .tab-content {
+            position: relative;
+        }
+
+        .tab-pane {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .tab-pane.active {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .viz-tabs {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .tab-btn {
+                flex: 1;
+                min-width: 120px;
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tab-btn {
+                flex: 1 0 50%;
+                font-size: 0.85rem;
+                padding: 0.5rem 0.75rem;
+                text-align: center;
+            }
+        }
+    `;
+    document.head.appendChild(tabStyle);
+
 // Performance monitoring (optional)
 if ('performance' in window) {
     window.addEventListener('load', function() {
