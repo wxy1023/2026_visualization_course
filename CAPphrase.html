@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基于CAPphrase数据集的概率短语认知差异与影响因素分析</title>
+    <meta name="description" content="探索人们如何理解和解释常见概率性词汇的科学研究项目">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <h1>CAPphrase</h1>
+                    <span class="subtitle">概率性词汇认知研究</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#overview">研究概览</a></li>
+                    <li><a href="#visualizations">数据可视化</a></li>
+                    <li><a href="#methods">研究方法</a></li>
+                    <li><a href="#about">关于项目</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">我们如何理解"可能性"的语言？</h2>
+                    <p class="hero-lead">
+                        "很可能"、"有可能"、"几乎确定"——这些日常用语真的传达了清晰的可能性吗？
+                        CAPphrase项目通过对5,174名参与者的深入研究，揭示了人们在理解概率性词汇时的认知模式和系统性偏差。
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5,174</span>
+                            <span class="stat-label">参与者</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">19</span>
+                            <span class="stat-label">概率词汇</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">研究方法</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="intro">
+            <div class="container">
+                <div class="intro-text-full">
+                    <h3>项目背景</h3>
+                    <p>
+                        在日常交流、医疗风险沟通、金融决策及政府情报评估等场景中，人们常使用"极有可能（Highly Likely）""可能发生（Likely）""或许会发生（Might Happen）"等定性概率短语表达事件发生的可能性。概率短语因符合日常语言习惯，被广泛应用于风险提示、公共政策和人机交互系统。
+                    </p>
+                    <p>
+                        然而，概率语言本身存在较强模糊性。同一短语在不同个体间可能赋予截然不同的数值含义——"可能发生"有人理解为60%，有人则理解为80%。这种认知差异易导致信息传递失真，在医疗诊断、气候预警、金融投资等高风险领域可能带来严重后果。
+                    </p>
+                    <p>
+                        本项目基于Adam Kucharski于2026年创建的CAPphrase数据集展开研究。该数据集收集了5174名参与者对19个常见概率短语的主观评估，同时包含成对比较、绝对概率打分及人口统计学信息。本研究旨在从统计学视角量化概率语言的模糊程度，分析相对判断与绝对评估的认知差异，并探究人口统计学因素对概率感知的影响机制。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="visualizations" class="visualizations">
+            <div class="container">
+                <h3 class="section-title">数据可视化分析</h3>
+
+                <div class="viz-grid">
+                    <!-- 词汇排序与模糊性 -->
+                    <div class="viz-section">
+                        <h4 class="viz-title">词汇的清晰性与模糊性</h4>
+                        <div class="viz-content">
+                            <div class="viz-item">
+                                <img src="output/01_words_means.png" alt="按均值排序的概率词汇" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>概率短语的认知梯度</h5>
+                                    <p>
+                                        水平散点图展示了19个概率短语按平均概率值形成的认知梯度。
+                                        从低概率到高概率，词汇形成了基本符合直觉的连续谱系，极端确定性短语与极端否定短语分别位于两端。
+                                        值得注意的是，Realistic Possibility的平均概率高于About Even，表明受访者倾向于将现实可能性解读为略偏积极的概率。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">概率词汇按平均数值估计排序，显示个体间理解的广泛差异</p>
+                            </div>
+
+                            <div class="viz-item">
+                                <img src="output/01_words_yardsticks.png" alt="词汇模糊性对比官方标准" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>模糊性排序与官方标准对比</h5>
+                                    <p>
+                                        按方差从高到低重新排列的短语揭示了概率语言模糊性的核心特征。
+                                        Realistic Possibility的方差最大，散点几乎均匀分布于0–100%全区间，表明不同受访者对该短语的解读存在根本性分歧。
+                                        彩色区间带揭示了现有标准化体系与大众直觉之间的显著张力，特别是Could Happen、Might Happen、May Happen三个情态动词短语形成了标准化盲区。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">词汇模糊性排序与官方标准对比，揭示专业标准化的必要性</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 一致性分析 -->
+                    <div class="viz-section">
+                        <h4 class="viz-title">认知一致性分析</h4>
+                        <div class="viz-content">
+                            <div class="viz-item">
+                                <img src="output/02_inconsistent_pairs.png" alt="成对比较一致性热力图" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>群体一致性分析</h5>
+                                    <p>
+                                        热力图展示了所有词对在两两比较中被选择的比率。
+                                        语义距离较远的词对（如Almost No Chance与Will Happen）呈现出近乎绝对的群体一致性（接近100%）。
+                                        而低概率区与中概率区的相邻词汇（如Little Chance与Chances are Slight、Could Happen与Might Happen）深陷语义纠缠，构成了概率语言理解中最主要的歧义源。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">成对比较一致性热力图，红色表示高不一致性区域</p>
+                            </div>
+
+                            <div class="viz-item">
+                                <img src="output/02b_part1_vs_part2_inconsistency.png" alt="比较与绝对判断的不一致性" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>相对判断vs绝对评估的矛盾</h5>
+                                    <p>
+                                        热力图展示了同一位受访者在成对比较与绝对打分两种任务下，对同一组词汇排序结果的不一致率。
+                                        Improbable、Chances are Slight、Unlikely等低概率区词汇在相对排序与绝对量化之间存在系统性错位。
+                                        Could Happen与Might Happen（29%）这类可能性词汇在两种认知任务中极不稳定，体现了词汇本身语义边界模糊时，两种认知系统极易产生矛盾输出。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">成对比较vs绝对评分不一致性，显示不同判断任务的认知差异</p>
+                            </div>
+
+                            <div class="viz-item">
+                                <img src="output/02c_repeated_pair_consistency.png" alt="重复测试的内部一致性" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>个体内稳定性分析</h5>
+                                    <p>
+                                        通过重复测试设计（第1对与第10对相同，词汇顺序相反），
+                                        此图显示了同一受访者在前后两次遇到相同词对时改变选择的比例。
+                                        认知摇摆主要出现在中等概率语义相近的词对中，例如Could Happen与Might Happen（31%）是所有词对中个体内不稳定性最高的组合。
+                                        这体现了语言本身在这些语义区间缺乏足够的区分度，导致人类的概率直觉无法形成稳定、可重复的排序。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">重复测试一致性分析，揭示时间维度上的判断波动性</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 认知偏差 -->
+                    <div class="viz-section">
+                        <h4 class="viz-title">认知偏差与决策模式</h4>
+                        <div class="viz-content">
+                            <div class="viz-item">
+                                <img src="output/03_position_effect.png" alt="位置效应分析" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>序列位置效应</h5>
+                                    <p>
+                                        折线图展示了不同呈现位置相对于词语平均值的平均偏差，呈现显著的阶段性特征。
+                                        位置1–4展现初始低估效应（最突出为–1.0%），位置12–18表现出渐进高估效应（峰值+0.7%），
+                                        位置19出现终末回归现象。这种尺度漂移现象反映了测验过程中受访者的认知调整和启发式策略变化。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">位置效应分析，显示序列位置对概率判断的系统性影响</p>
+                            </div>
+
+                            <div class="viz-item">
+                                <img src="output/07_rounding.png" alt="数值舍入模式" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>取整偏好分析</h5>
+                                    <p>
+                                        RPI（取整偏好指数）分析揭示了受访者普遍存在显著的取整倾向。
+                                        左图显示末位数字为0的回答占比最高（超过50%），远超均匀分布的10%理论值；
+                                        右图显示5174名受访者的取整比例分布呈右偏单峰形态，取整比例在90–100%区间的受访者数量最多。
+                                        即使是最低取整比例的群体，其取整比例也普遍高于50%。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">RPI分布与末位数字偏好，揭示普遍的舍入认知倾向</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 人口统计学影响 -->
+                    <div class="viz-section">
+                        <h4 class="viz-title">人口统计学因素的影响</h4>
+                        <div class="viz-content">
+                            <div class="viz-item">
+                                <img src="output/06_demographics.png" alt="受访者人口统计学特征" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>人口统计学分布</h5>
+                                    <p>
+                                        样本呈现特定的选择偏倚：年龄集中于中青年群体（25–64岁占80.6%），教育水平高度偏斜（本科及以上学历占80.0%），
+                                        英语母语者占绝对多数（77.2%），盎格鲁-撒克逊文化圈受访者占比超过75%。
+                                        这些特征表明样本更接近于高教育水平英语使用者的便利样本，在推断英语国家高知群体时具有较高的内部效度。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">样本人口统计学分布特征</p>
+                            </div>
+
+                            <div class="viz-item">
+                                <img src="output/08_demographic_effects_position.png" alt="人口统计学效应分析" class="viz-image">
+                                <div class="viz-description">
+                                    <h5>人口统计学调节效应</h5>
+                                    <p>
+                                        基于logit变换的OLS回归分析显示，不同人口统计学特征对概率估计行为产生显著影响。
+                                        年龄较大的群体整体更加保守，高学历群体的概率判断更加稳定，
+                                        语言能力不足会降低对概率短语的理解准确性，美国受访者显著高于英国参考组。
+                                        同时，题目展示顺序存在明显的"位置效应"，中后段题目整体高于前3题参考组。
+                                    </p>
+                                </div>
+                                <p class="figure-caption">人口统计学因素对概率理解的调节效应</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methods" class="methods">
+            <div class="container">
+                <h3 class="section-title">研究方法</h3>
+                <div class="methods-grid">
+                    <div class="method-step">
+                        <div class="step-number">1</div>
+                        <h4>成对比较任务</h4>
+                        <p>每位参与者完成10对词汇比较（9对独特+1对重复），判断哪个词汇表示更高概率。重复对用于评估内部一致性。</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">2</div>
+                        <h4>绝对数值评分</h4>
+                        <p>对19个概率词汇进行0-100%的数值评分，词汇呈现顺序随机化以控制位置效应。</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="step-number">3</div>
+                        <h4>人口统计学调查</h4>
+                        <p>收集年龄组、教育水平、英语背景和居住地等信息，用于分析群体差异。</p>
+                    </div>
+                </div>
+
+                <div class="methods-details">
+                    <h4>数据预处理</h4>
+                    <ul class="methods-list">
+                        <li><strong>异常值处理：</strong>采用Z-score方法，剔除超出词汇均值±4个标准差的极端响应，共删除628条异常观测数据</li>
+                        <li><strong>数据转换：</strong>将长格式数据转换为宽格式，便于相关性分析和多变量建模</li>
+                        <li><strong>一致性检验：</strong>利用重复配对题评估受访者的时间维度判断稳定性</li>
+                        <li><strong>取整偏好指数：</strong>计算RPI（Rounding Preference Index）量化个体层面的取整行为</li>
+                    </ul>
+                </div>
+
+                <div class="methods-details">
+                    <h4>统计分析方法</h4>
+                    <ul class="methods-list">
+                        <li><strong>描述性统计：</strong>计算均值、中位数、标准差、方差等指标，分析概率短语的集中趋势与离散程度</li>
+                        <li><strong>一致性分析：</strong>通过热力图展示群体一致性与个体内稳定性</li>
+                        <li><strong>位置效应检验：</strong>分析不同呈现位置的平均偏差及其95%置信区间</li>
+                        <li><strong>回归建模：</strong>采用logit变换的OLS回归模型分析人口统计学因素的影响</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h3 class="section-title">关于CAPphrase项目</h3>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h4>研究意义</h4>
+                            <p>
+                                本研究基于CAPphrase大规模概率语言数据集，从描述统计、认知一致性、位置效应、取整偏好以及人口统计学异质性等多个维度，对人类概率语言认知进行了系统分析。研究结果表明，概率短语并不存在统一、稳定的数值含义，不同个体之间对同一表达往往存在显著认知差异。
+                            </p>
+                            <p>
+                                研究结果对于优化风险沟通、改进政策表达及提升人机交互透明度提供实证支持。在医疗诊断、气候预警、金融投资等高风险领域，准确传达概率信息的重要性不言而喻。
+                            </p>
+
+                            <h4>核心发现</h4>
+                            <ul>
+                                <li><strong>显著认知差异：</strong>同一词汇在不同人心中可代表相差30-40个百分点的概率</li>
+                                <li><strong>普遍取整偏好：</strong>RPI分析显示，即使是舍入偏好最低的群体，舍入比例也超过50%</li>
+                                <li><strong>位置效应：</strong>题目展示顺序会系统性影响概率判断，后期题目更容易被赋予较高概率值</li>
+                                <li><strong>人口统计学影响：</strong>年龄、教育水平、英语能力以及国家背景均对概率估计行为产生显著影响</li>
+                            </ul>
+
+                            <h4>研究局限</h4>
+                            <p>
+                                CAPphrase数据集主要来源于英语国家、高学历群体，样本具有一定的选择偏倚，因此研究结论在跨文化与低教育水平群体中的外部推广性仍需进一步验证。
+                            </p>
+
+                        </div>
+
+                        <div class="about-stats">
+                            <div class="stat-card">
+                                <h5>研究规模</h5>
+                                <div class="stat-detail">
+                                    <span class="stat-value">5,174</span>
+                                    <span class="stat-desc">在线参与者</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <h5>词汇覆盖</h5>
+                                <div class="stat-detail">
+                                    <span class="stat-value">19</span>
+                                    <span class="stat-desc">常用概率词汇</span>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <h5>数据维度</h5>
+                                <div class="stat-detail">
+                                    <span class="stat-value">3</span>
+                                    <span class="stat-desc">研究方法组合</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>基于CAPphrase数据集的概率短语认知差异与影响因素分析</h4>
+                    <p>概率不大概小组：刘学睿、王羿力、吴欣瑜、陶奕彤、张雪洋</p>
+                    <p class="citation">引用：Kucharski AJ (2026) CAPphrase: Comparative and Absolute Probability phrase dataset</p>
+                </div>
+                <div class="footer-links">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 数据处理与可视化期末项目</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
