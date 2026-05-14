@@ -74,10 +74,18 @@
             <div class="container">
                 <h3 class="section-title">数据可视化分析</h3>
 
-                <div class="viz-grid">
+                <!-- Tab Navigation -->
+                <div class="viz-tabs">
+                    <button class="tab-btn active" onclick="openTab(event, 'clarity')">词汇的清晰性与模糊性</button>
+                    <button class="tab-btn" onclick="openTab(event, 'consistency')">认知一致性分析</button>
+                    <button class="tab-btn" onclick="openTab(event, 'bias')">认知偏差与决策模式</button>
+                    <button class="tab-btn" onclick="openTab(event, 'demographics')">人口统计学因素的影响</button>
+                </div>
+
+                <!-- Tab Content -->
+                <div class="tab-content">
                     <!-- 词汇排序与模糊性 -->
-                    <div class="viz-section">
-                        <h4 class="viz-title">词汇的清晰性与模糊性</h4>
+                    <div id="clarity" class="tab-pane active">
                         <div class="viz-content">
                             <div class="viz-item">
                                 <img src="01_words_means.png" alt="按均值排序的概率词汇" class="viz-image">
@@ -108,8 +116,7 @@
                     </div>
 
                     <!-- 一致性分析 -->
-                    <div class="viz-section">
-                        <h4 class="viz-title">认知一致性分析</h4>
+                    <div id="consistency" class="tab-pane">
                         <div class="viz-content">
                             <div class="viz-item">
                                 <img src="02_inconsistent_pairs.png" alt="成对比较一致性热力图" class="viz-image">
@@ -154,8 +161,7 @@
                     </div>
 
                     <!-- 认知偏差 -->
-                    <div class="viz-section">
-                        <h4 class="viz-title">认知偏差与决策模式</h4>
+                    <div id="bias" class="tab-pane">
                         <div class="viz-content">
                             <div class="viz-item">
                                 <img src="03_position_effect.png" alt="位置效应分析" class="viz-image">
@@ -187,8 +193,7 @@
                     </div>
 
                     <!-- 人口统计学影响 -->
-                    <div class="viz-section">
-                        <h4 class="viz-title">人口统计学因素的影响</h4>
+                    <div id="demographics" class="tab-pane">
                         <div class="viz-content">
                             <div class="viz-item">
                                 <img src="06_demographics.png" alt="受访者人口统计学特征" class="viz-image">
